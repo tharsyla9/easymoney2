@@ -1,9 +1,14 @@
-/**
- * @format
- */
+const { json } = require('express');
+const express = require('express');
+const { getRepository } = require('typeorm');
 
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
+require('reflect-metadata');
+require('./db/index.js');
+app = express();
 
-AppRegistry.registerComponent(appName, () => App);
+app.use(express.json());
+
+app.listen(3333, () => {
+    console.log("finalmente");
+});
+
